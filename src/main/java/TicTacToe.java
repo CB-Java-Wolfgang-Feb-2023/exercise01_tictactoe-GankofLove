@@ -29,21 +29,29 @@ public class TicTacToe {
         // Game Loop
         while (true) {
 
-            // Spieleingabe
+// Spieleingabe
+// Aufforderung an den Spieler, eine Nummer für den nächsten Zug einzugeben.
             System.out.println("Um einen Zug zu machen, bitte eine Nummer (1 - 9) eintragen und mit Enter bestätigen:");
-            int playerPos = -1;
+            int playerPos = -1;  // Initialisiere die Variable, um die Position des Spielers zu speichern
 
-            while (true) {
+            while (true) {  // Beginn einer Endlosschleife, um den Spieler zu zwingen, eine gültige Eingabe zu machen
                 try {
-                    playerPos = scan.nextInt();
+                    playerPos = scan.nextInt();  // Versuche, die nächste Ganzzahl vom Spieler zu lesen
+
+                    // Überprüfe, ob die eingegebene Position gültig ist:
+                    // - Muss eine Zahl zwischen 1 und 9 sein
+                    // - Darf noch nicht von einem Spieler oder dem Computer besetzt sein
                     if (playerPos > 0 && playerPos <= 9 && !playerPositions.contains(playerPos) && !cpuPositions.contains(playerPos)) {
-                        break;
+                        break;  // Wenn die Eingabe gültig ist, brich die Schleife ab.
                     }
-                } catch (InputMismatchException e) {
-                    scan.next();  // Clear the invalid input
+                } catch (InputMismatchException e) {  // Fange die Ausnahme ab, wenn die Eingabe keine Ganzzahl ist
+                    scan.next();  // Konsumiere den ungültigen Input, um eine Endlosschleife zu verhindern
                 }
+
+                // Ausgabe, wenn ungültig
                 System.out.println("Ungültige Eingabe, bitte erneut versuchen:");
             }
+
 
             // Spieler-Spielzug platzieren
             placePiece(gameBoard, playerPos, "player");

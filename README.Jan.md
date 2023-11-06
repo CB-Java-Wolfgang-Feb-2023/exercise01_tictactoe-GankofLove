@@ -31,3 +31,4 @@ Das `TicTacToe`-Programm ermöglicht es einem Spieler, gegen den Computer in ein
 6. Schritte 2-5 werden wiederholt, bis das Spiel endet.
 
 Das Spiel endet, wenn ein Spieler drei seiner Symbole in einer Reihe, Spalte oder Diagonale hat oder wenn alle Felder belegt sind und kein Spieler gewonnen hat.
+5
